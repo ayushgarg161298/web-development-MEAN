@@ -1,0 +1,104 @@
+<html>
+
+    <head>
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    </head>
+
+    <body style="display:flex;align-items:center; justify-content: center;">
+        <% if(!edit){ %>
+        <div class="row">
+            <div class="col" style="width:500px">
+                <div class="card darken-1">
+                    <div class="card-content white-text">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Title</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% for(i=0;i<tasks.length; i++){ %>
+                                <tr>
+                                    <td><%=i+1 %></td>
+                                    <td><%= tasks[i].title%></td>
+                                    <td style="text-align:right">
+                                        <form method="post">
+                                            <input type="hidden" name="id" value="<%=tasks[i].id %>" />
+                                            <button class="waves-effect waves-light btn-small blue" type="submit"
+                                                name="button" value="edit">Edit</button>
+                                            <button class="waves-effect waves-light btn-small red" type="submit"
+                                                name="button" value="delete">Delete</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                                <%}%>
+                            </tbody>
+                                </table>
+                            </div>
+                            <div class="card-action" style="text-align: right">
+                                <button data-target="modal1" style="color: orange" class="btn-flat modal-trigger">Create Task</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <form method="post" class="col s12">
+                    <div id="modal1" class="modal" style="width:30%; margin-top:100px;">
+                        <div class="modal-content">
+                            <h4>Create A Task</h4>
+
+                            <div class="row" style="margin-top:50px;">
+                                <div class="input-field col s6">
+                                    <input placeholder="(eg) Shreyansh Goel" name="title" id="first_name" type="text" class="validate">
+                                        <label for="first_name">Title</label>
+                                </div>
+                            </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button class="modal-close waves-effect waves-green btn-flat">Cancel</button>
+                                <button type="submit" name="button" value="create" class="modal-close waves-effect waves-green btn-flat">Create</button>
+                            </div>
+                        </div>
+                </form>
+                    <% }else{ %>
+        <form method="post" class="col s12">
+            <div class="row">
+                <div class="col" style="width:500px">
+                    <div class="card darken-1">
+                        <div class="card-content">
+                            <h4>Edit the task</h4>
+
+                            <div class="row" style="margin-top:50px;">
+                                <div class="input-field col s6">
+                                    <input type="hidden" name="id" value="<%=id %>" />
+                                    <input placeholder="(eg) Shreyansh Goel" value="<%=title %>"
+                                        name="title" id="first_name" type="text"
+                                        class="validate">
+                                    <label for="first_name">Title</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-action" style="text-align: right">
+                            <button type="submit" name="button" value="save"
+                                style="color: orange" class="btn-flat">Edit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <% } %>
+
+    </body>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var elems = document.querySelectorAll('.modal');
+            var instances = M.Modal.init(elems);
+        });
+    </script>
+
+</html>

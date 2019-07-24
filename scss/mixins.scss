@@ -1,0 +1,85 @@
+@mixin MQ($point1, $point2:null, $point3:null, $point4:null, $point5:null) {
+  
+  @if $point1 == xs {
+        @media (max-width: 320px) { @content; }
+    }
+  @else if $point1 == sm {
+        @media (max-width: 576px) { @content; }
+    }
+  @else if $point1 == md {
+    @media (min-width:577px) and (max-width: 768px) { @content; }
+  }
+  @else if $point1 == lg {
+    @media (min-width:769px) and (max-width: 992px)  { @content; }
+  }
+  @else if $point1 == xl {
+    @media (min-width:993px) and (max-width: 1200px)  { @content; }
+  }
+  @else if $point1 == desktop {
+    @media (min-width:1201px)  { @content; }
+  }
+
+  @if $point2 == xs {
+    @media (max-width: 320px) { @content; }
+}
+  @else if $point2 == sm {
+    @media (max-width: 576px) { @content; }
+  }
+  @else if $point2 == md {
+    @media (min-width:577px) and (max-width: 768px) { @content; }
+  }
+  @else if $point2 == lg {
+    @media (min-width:769px) and (max-width: 992px)  { @content; }
+  }
+  @else if $point2 == xl {
+    @media (min-width:993px) and (max-width: 1200px)  { @content; }
+  }
+
+  @if $point3 == xs {
+    @media (max-width: 320px) { @content; }
+}
+  @else if $point3 == sm {
+    @media (max-width: 576px) { @content; }
+  }
+  @else if $point3 == md {
+    @media (min-width:577px) and (max-width: 768px) { @content; }
+  }
+  @else if $point3 == lg {
+    @media (min-width:769px) and (max-width: 992px)  { @content; }
+  }
+  @else if $point3 == xl {
+    @media (min-width:993px) and (max-width: 1200px)  { @content; }
+  }
+
+  @if $point4 == xs {
+    @media (max-width: 320px) { @content; }
+}
+  @else if $point4 == sm {
+    @media (max-width: 576px) { @content; }
+  }
+  @else if $point4 == md {
+    @media (min-width:577px) and (max-width: 768px) { @content; }
+  }
+  @else if $point4 == lg {
+    @media (min-width:769px) and (max-width: 992px)  { @content; }
+  }
+  @else if $point4 == xl {
+    @media (min-width:993px) and (max-width: 1200px)  { @content; }
+  }
+
+  @if $point5 == xs {
+    @media (max-width: 320px) { @content; }
+}
+  @else if $point5 == sm {
+    @media (max-width: 576px) { @content; }
+  }
+  @else if $point5 == md {
+    @media (min-width:577px) and (max-width: 768px) { @content; }
+  }
+  @else if $point5 == lg {
+    @media (min-width:769px) and (max-width: 992px)  { @content; }
+  }
+  @else if $point5 == xl {
+    @media (min-width:993px) and (max-width: 1200px)  { @content; }
+  }
+}

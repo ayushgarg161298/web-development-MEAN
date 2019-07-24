@@ -1,0 +1,19 @@
+@import"compass/css3";
+@import"compass/utilities";
+@import"mixins";
+$color:rgb(230, 41, 41);
+$height:100px;
+#a {
+    height: $height;
+    background: $color;
+    width:100px;
+    @include border-radius(10%);
+  
+
+   & > #b{
+    
+    height: 50px;
+    width:50px;
+    background: pink
+}
+}

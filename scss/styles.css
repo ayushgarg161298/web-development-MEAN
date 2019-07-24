@@ -1,0 +1,22 @@
+/* line 6, styles.scss */
+#a {
+  height: 100%;
+  background:blue;
+  width: 100%;
+  -moz-border-radius: 10%;
+  -webkit-border-radius: 10%;
+  border-radius: 10%;
+}
+@media (min-width:577px) and (max-width: 768px)  {
+  /* line 6, styles.scss */
+  #a {
+    width: 500px;
+  }
+}
+/* line 15, styles.scss */
+#a > #b {
+  height: 50%;
+  width: 50%;
+  background: pink;
+  align-self: center ;
+}
